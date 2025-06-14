@@ -1,5 +1,5 @@
 <section class="resume">
   <h2>Resume</h2>
-  <a href="assets/resume.pdf" download class="btn">Download My Resume</a>
-  <iframe src="assets/resume.pdf" width="100%" height="600px"></iframe>
+  <a href="https://docs.google.com/document/d/18MCbZ_UAYBPGyczO-Ag485FZINpV_2Mb4xJ__OUlKsY/edit?usp=sharing" download class="btn">Download My Resume</a>
+  <iframe src="https://docs.google.com/document/d/18MCbZ_UAYBPGyczO-Ag485FZINpV_2Mb4xJ__OUlKsY/edit?usp=sharing" width="100%" height="600px" title="Resume PDF"></iframe>
 </section>
