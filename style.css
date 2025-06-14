@@ -1,4 +1,37 @@
-/* Example: Applying a green background to the body */
-body {
-    background-color: green;
+.site-header{
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:  0 2px 4 px rgba(0, 0, 0, 0.1);
+}
+.nav-links Li{
+    display: inline;
+    margin: 0 10 px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: #333;
+}
+.hero{
+    text-align: center;
+    padding:  60px 20 px;
+}
+.btn{
+    margin: 10px;
+    padding: auto;
+    background-color: #0077bc;
+    color: #fff;
+    text-decoration-color: none;
+    border-radius: 5px;
+}
+.badge {
+  display: inline-block;
+  background: #90e0ef;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 4px;
 }
