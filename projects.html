@@ -1,16 +1,99 @@
-<section class="projects">
-  <h2>My Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <img src="assets/images/project1.png" alt="Project 1">
-      <h3>Task Manager App</h3>
-      <p>Organize tasks with ease.</p>
-      <p>
-        <a href="https://github.com/your/repo">GitHub</a> |
-        <a href="https://yourproject.live">Live Demo</a>
-      </p>
-      <p><small>React, Node.js, MongoDB</small></p>
-    </div>
-    <!-- Add more projects -->
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joshua Johnston | Projects</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">
+        <a href="assets/images/profile.jpg" target="_blank">
+          <img
+            src="assets/images/profile.jpg"
+            alt="Joshua Johnston Logo"
+            class="logo-img"
+          />
+        </a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="projects-hero">
+        <div class="container">
+          <h2>My Work & Projects</h2>
+          <p>
+            Explore a selection of my recent projects, showcasing my skills in
+            full-stack development.
+          </p>
+        </div>
+      </section>
+
+      <section class="all-projects">
+        <div class="container">
+          <div class="project-grid">
+            <div class="project-item">
+              <h3>Project One Title</h3>
+              <p>
+                A brief, compelling description of your first key project.
+                Highlight its main function and technologies used (e.g., "A web
+                application built with Spring Boot and React for managing
+                tasks.").
+              </p>
+              <a href="#" class="btn btn-small">View Details</a>
+            </div>
+            <div class="project-item">
+              <h3>Project Two Title</h3>
+              <p>
+                A brief, compelling description of your second key project. What
+                problem did it solve? What did you learn? (e.g., "A Python-based
+                data analysis tool with a user-friendly interface.").
+              </p>
+              <a href="#" class="btn btn-small">View Details</a>
+            </div>
+            <div class="project-item">
+              <h3>Project Three Title</h3>
+              <p>
+                Another short description for a significant project. (e.g.,
+                "Developed a RESTful API using Node.js and Express for mobile
+                integration.").
+              </p>
+              <a href="#" class="btn btn-small">View Details</a>
+            </div>
+            <div class="project-item">
+              <h3>Project Four Title</h3>
+              <p>Description for another project.</p>
+              <a href="#" class="btn btn-small">View Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-prompt">
+        <div class="container">
+          <h2>Have a project in mind?</h2>
+          <p>
+            Let's connect and discuss how I can help bring your ideas to life.
+          </p>
+          <a href="contact.html" class="btn">Get in Touch</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Joshua Johnston. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

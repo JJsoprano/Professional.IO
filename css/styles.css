@@ -1,0 +1,551 @@
+/* --- CSS Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define CSS Variables for easy theme changes */
+:root {
+    --primary-color: #00796B; /* A pleasant teal/dark cyan */
+    --secondary-color: #004D40; /* A darker shade of the primary */
+    --accent-color: #FFC107; /* A contrasting accent color (amber/gold) */
+    --text-color: #333333; /* Dark gray for main text */
+    --light-text-color: #FFFFFF; /* White for text on dark backgrounds */
+    --background-light: #F4F8FB; /* A very light, subtle blue-gray */
+    --background-medium: #DAE4EC; /* A slightly darker background */
+    --border-color: #E0E0E0; /* Light gray for borders */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    padding-top: 80px; /* Space for fixed header */
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: 900px; /* Consistent content width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--light-text-color);
+    padding: 15px 40px;
+    box-shadow: 0 3px 8px var(--shadow-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* --- Hero Section (Index Page) --- */
+.hero {
+    background-color: var(--background-medium);
+    padding: 120px 20px 80px 20px; /* Adjust padding if needed, often set to take more vertical space */
+    text-align: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px); /* Makes hero take up most of the viewport height */
+}
+
+.hero-img {
+    width: 180px; /* Consistent profile picture size on homepage */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.07) rotate(2deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px var(--shadow-light);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--text-color);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+/* --- About Page Sections --- */
+/* New section for the intro text on about page */
+.about-brief-intro {
+    background-color: var(--background-medium); /* Matches hero background for consistency */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-brief-intro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.about-brief-intro p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.about { /* Main about section (profile pic, detailed text, skills) */
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 700px;
+    text-align: left;
+}
+
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 6px solid var(--primary-color);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 30px var(--shadow-strong);
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--background-medium);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    text-align: center;
+}
+
+.skills h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.badge {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.95em;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.badge:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* CTA Group on About Page */
+.cta-group {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.cta {
+    font-size: 1.2em;
+    color: var(--text-color);
+    font-weight: 500;
+    text-align: center; /* Ensure CTA text is centered */
+}
+
+/* --- Project Page Sections --- */
+.projects-hero {
+    background-color: var(--background-medium);
+    padding: 120px 20px 80px 20px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.projects-hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.projects-hero p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.all-projects {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.all-projects h2 { /* If you decide to add an h2 inside all-projects */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.project-item {
+    background-color: var(--light-text-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.project-item p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.contact-prompt {
+    background-color: var(--background-light); /* Or a different background to stand out */
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact-prompt h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.contact-prompt p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 80px;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    font-size: 0.9em;
+    box-shadow: 0 -2px 8px var(--shadow-light);
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .hero h1, .projects-hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p, .projects-hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .about-brief-intro h2,
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-brief-intro p,
+    .about-content p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .profile-pic,
+    .hero-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .skills h3 {
+        font-size: 1.5rem;
+    }
+
+    .badge-grid {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .badge {
+        padding: 8px 15px;
+        font-size: 0.85em;
+        margin: 5px;
+    }
+
+    .project-item {
+        text-align: center;
+        align-items: center;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta .btn {
+        width: 100%;
+        max-width: 280px;
+        margin-left: 0;
+    }
+
+    .contact-prompt h2 {
+        font-size: 1.8rem;
+    }
+    .contact-prompt p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 10px 15px;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .hero h1, .projects-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p, .projects-hero p {
+        font-size: 1em;
+    }
+
+    .profile-pic,
+    .hero-img {
+        width: 120px;
+        height: 120px;
+    }
+}
