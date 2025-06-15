@@ -1,12 +1,36 @@
 <section class="contact">
-  <h2>Contact Me</h2>
-  <form id="contact-form">
-    <input type="text" name="name" placeholder=" JoshuaJohnston" required><br>
-    <input type="email" name="email" placeholder="joshuajohnston22@gmail.com" required><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit" class="btn">Send</button>
-  </form>
-  <p>Connect with me:</p>
-  <a href="https://github.com/yourusername">GitHub</a> |
-  <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+        <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea><br>
+        <button type="button" id="sendEmailBtn" class="btn">Send</button>
+    </form>
+    <p>Connect with me:</p>
+    <a href="https://github.com/yourusername" target="https://github.com/JJsoprano">GitHub</a> |
+    <a href="https://linkedin.com/in/yourusername" target="https://www.linkedin.com/in/joshua-johnston-1783991b6">LinkedIn</a>
 </section>
+
+<script>
+    document.getElementById('sendEmailBtn').addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // --- IMPORTANT: REPLACE WITH YOUR ACTUAL EMAIL ADDRESS ---
+        const recipientEmail = 'your-actual-email@example.com'; 
+        // Example: 'joshuajohnston22@gmail.com' (if that's your email to receive messages)
+
+        // Subject for the email you will receive
+        const subject = `Portfolio Contact from ${name}`;
+
+        // Body of the email you will receive, including sender's details
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+        // Encode the subject and body to handle spaces and special characters correctly in the mailto link
+        const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open the user's default email client
+        window.location.href = mailtoLink;
+    });
+</script>
