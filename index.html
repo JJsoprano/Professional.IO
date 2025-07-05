@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joshua Johnston | Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="logo">
-        <a href="assets/images/profile.jpg" target="_blank">
-          <img
-            src="assets/images/profile.jpg"
-            alt="Joshua Johnston Logo"
-            class="logo-img"
-          />
-        </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Johnston | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <a href="assets/images/profile.jpg" target="_blank">
+        <img src="assets/images/profile.jpg" alt="Joshua Johnston Logo" class="logo-img" />
+      </a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <img src="assets/images/profile.jpg" alt="Joshua Johnston" class="hero-img" />
+      <h1>Joshua Johnston</h1>
+      <p>Full-Stack Java Developer | React, Node.js, Python</p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn">View My Projects</a>
+        <a href="assets/resume.pdf" class="btn" target="_blank">Download Resume</a>
       </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    </section>
+  </main>
 
-    <main>
-      <section class="hero">
-        <img
-          src="assets/images/profile.jpg"
-          alt="Joshua Johnston"
-          class="hero-img"
-        />
-        <h1>Joshua Johnston</h1>
-        <p>Full-Stack Java Developer | React, Node.js, Python</p>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn">View My Projects</a>
-          <a href="assets/resume.pdf" class="btn" target="_blank"
-            >Download Resume</a
-          >
-        </div>
-      </section>
-    </main>
+  <footer class="site-footer">
+    <p>&copy; 2025 Joshua Johnston. All rights reserved.</p>
+  </footer>
+  <script src="main.js" defer></script>
 
-    <footer class="site-footer">
-      <p>&copy; 2025 Joshua Johnston. All rights reserved.</p>
-    </footer>
-
-    <script src="js/main.js"></script>
-  </body>
 </html>
